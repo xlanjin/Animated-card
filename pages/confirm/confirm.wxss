@@ -1,0 +1,102 @@
+/**confirm.wxss**/
+/**optional**/
+@import "../../common.wxss";
+page {
+  background: #F2F2F6;
+}
+.block-bg{
+  padding: 25rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.buy_flower_detail {
+  display: flex;
+  position: relative;
+}
+.buy_flower_detair_photo_wrap {
+  width: 108rpx;
+  height: 120rpx;
+  box-shadow: -5px 1px 15px 1px #ccc;
+}
+
+.block_title {
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.block_title_tip {
+  font-size: 20rpx;
+  line-height: 28rpx;
+}
+
+.buy_flower_detail .flower_price {
+  position: absolute;
+  right: 11px;
+  top: 33px;
+  color: #00c9a9;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.buy_flower_detair_photo_wrap image {
+  width: 100%;
+  height: 100%;
+}
+.flower_detail {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.buy_flower_detail_tip {
+  flex-grow: 1;margin-left: 13px;
+}
+
+.confirm_addresss_title {
+  display: flex;
+}
+
+.confirm_addresss_title .icon {
+  text-align: right;
+  flex-grow: 1;
+}
+
+.confirm_addresss_title .icon image {
+  width: 36rpx;
+  height: 36rpx;
+}
+.confirm_addresss_detail {
+  /* margin-top: 18px; */
+  margin-left: 40rpx;
+}
+
+.confirm_addresss_detail text {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #808080;     
+  display: block;
+}
+.confirm_total_price {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+.confirm_total_price .flower_price {
+  color: #00c9a9;
+  font-size: 36rpx;
+  line-height: 50rpx;
+}
+.confirm_total_tip {
+  font-size: 24rpx;
+  line-height: 34rpx;
+  text-align: center;
+}
+
+.btn-pay {
+  width: auto;
+  height: 48rpx;
+  font-size: 36rpx;
+  line-height: 48rpx;
+  padding: 20rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #00c9a9;
+}

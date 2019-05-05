@@ -1,0 +1,81 @@
+<!--address.xml-->
+<import src="../../components/switch.wxml" />
+<scroll-view class="page">
+    <!--购买花详情-->
+    <view class="block-bg buy_flower_detail">
+        <view class="buy_flower_detair_photo_wrap">
+            <image src="../../images/flower-buy.png"></image>
+        </view>  
+        <view class="buy_flower_detail_tip">
+            <view class="flower_detail content1 m-top-7">每月创意花卉</view>
+            <view class="flower_detail content2 m-top-3">三个月，自选日期</view>
+        </view>
+        <view class="flower_price">￥399</view>
+    </view>
+
+    <!--递送时间-->
+    <view class = "block-bg">
+        <view class = "text-left block_title">递送时间</view>
+        <view class = "text-left content2 block_title_tip ">
+            我们为您精心挑选了三个最合适的送花日期，您也可以对递送时间进行修改
+        </view>
+        <view style="display:flex; flex-direction:row" class="m-top-10">
+            <view class="data-select-item">
+                <view class="box">1</view>
+                <view class="data-select"><picker mode="date" bindchange="bindDateChange1">{{dates1}}</picker></view>
+            </view>
+            <view class="data-select-item">
+                <view class="box">2</view>
+                <view class="data-select"><picker mode="date" bindchange="bindDateChange2">{{dates2}}</picker></view>
+            </view>
+            <view class="data-select-item">
+                <view class="box">3</view>
+                <view class="data-select"><picker mode="date" bindchange="bindDateChange3">{{dates3}}</picker></view>
+            </view>
+        </view>
+    </view>
+    <!--配送地址-->
+    <view class = "block-bg">
+        <view class="text-left block_title">配送地址</view>
+        <view class="address_input"><input placeholder="收货人" bindblur="receiveCustomChange"/></view>
+        <view class="address_input"><input placeholder="电话" type="number" bindblur="mobileNoChange"/></view>
+        <view class="address_input address_wrap">
+            <picker mode="selector" class="wrap_item" bindchange="bindProvinceChange" value="{{index}}" range="{{provinceList}}">
+                <view>{{provinceList[provinceIndex || 0]}}</view>
+            </picker>
+            <picker class="wrap_item" bindchange="bindCityChange" value="{{index}}" range-key="name" range="{{cityList}}">
+                <view>{{cityList[cityIndex || 0].name}}</view>
+            </picker>
+            <picker class="wrap_item" bindchange="bindAreaChange" value="{{index}}" range="{{areaList}}">
+                 <view>{{areaList[areaIndex || 0]}}</view>
+            </picker>
+        </view>
+        <view class="address_input"><input placeholder="街道"/></view>
+        <view class="checkbox-style address_text">
+            <checkbox size="25" class="checkbox" value=""/>支付完成后由TA输入地址
+        </view>
+    </view>
+
+    <!--心里话-->
+    <view class = "block-bg">
+        <view style="display:flex;">
+            <view class="text-left block_title">随花附送心里话?</view>
+            <view style="flex-grow: 1;">
+                 <template is="switch" data="{{isOn: switchData[1].isOn, class:switchData[1].class, id:switchData[1].id, onTintColor:switchData[1].color}}"/>
+            </view>
+        </view>
+        <textarea bindblur="bindTextAreaBlur" class="address_textarea"/>
+    </view>
+
+    <!--匿名赠送-->
+    <view class = "block-bg">
+        <view style="display:flex;">
+            <view class="text-left block_title">匿名赠送</view>
+            <view style="flex-grow: 1;">
+               <template is="switch" data="{{isOn: switchData[0].isOn, class:switchData[1].class, id:switchData[0].id, onTintColor:switchData[0].color}}"/>
+            </view>
+        </view>
+    </view>
+    
+    <view class = "block-bg btn-pay btn-cta" bindtap="btnPay">确认支付</view>
+</scroll-view>
